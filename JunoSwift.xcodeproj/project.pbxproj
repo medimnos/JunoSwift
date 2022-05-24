@@ -17,6 +17,25 @@
 		61173A15283D7A40005399F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61173A13283D7A40005399F4 /* Main.storyboard */; };
 		61173A17283D7A41005399F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61173A16283D7A41005399F4 /* Assets.xcassets */; };
 		61173A1A283D7A41005399F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61173A18283D7A41005399F4 /* LaunchScreen.storyboard */; };
+		61173A38283D7D11005399F4 /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A20283D7D11005399F4 /* TokenStorage.swift */; };
+		61173A39283D7D11005399F4 /* SPList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A22283D7D11005399F4 /* SPList.swift */; };
+		61173A3A283D7D11005399F4 /* SPFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A23283D7D11005399F4 /* SPFile.swift */; };
+		61173A3B283D7D11005399F4 /* SPFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A24283D7D11005399F4 /* SPFolder.swift */; };
+		61173A3C283D7D11005399F4 /* SPAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A25283D7D11005399F4 /* SPAttachment.swift */; };
+		61173A3D283D7D11005399F4 /* SPListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A26283D7D11005399F4 /* SPListItem.swift */; };
+		61173A3E283D7D11005399F4 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A28283D7D11005399F4 /* NetworkClient.swift */; };
+		61173A3F283D7D11005399F4 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A29283D7D11005399F4 /* Connection.swift */; };
+		61173A40283D7D11005399F4 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A2A283D7D11005399F4 /* Authentication.swift */; };
+		61173A41283D7D11005399F4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A2B283D7D11005399F4 /* Log.swift */; };
+		61173A42283D7D11005399F4 /* Outlook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A2C283D7D11005399F4 /* Outlook.swift */; };
+		61173A43283D7D11005399F4 /* SharePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A2D283D7D11005399F4 /* SharePoint.swift */; };
+		61173A44283D7D11005399F4 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A2E283D7D11005399F4 /* Resource.swift */; };
+		61173A45283D7D11005399F4 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A2F283D7D11005399F4 /* Graph.swift */; };
+		61173A46283D7D11005399F4 /* OGOO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A30283D7D11005399F4 /* OGOO.swift */; };
+		61173A47283D7D11005399F4 /* OGOOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A31283D7D11005399F4 /* OGOOHelper.swift */; };
+		61173A48283D7D11005399F4 /* SSLPinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A32283D7D11005399F4 /* SSLPinning.swift */; };
+		61173A49283D7D11005399F4 /* OGOOConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A34283D7D11005399F4 /* OGOOConfig.swift */; };
+		61173A4A283D7D11005399F4 /* AttachmentActionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A37283D7D11005399F4 /* AttachmentActionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +62,25 @@
 		61173A16283D7A41005399F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61173A19283D7A41005399F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61173A1B283D7A41005399F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61173A20283D7D11005399F4 /* TokenStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
+		61173A22283D7D11005399F4 /* SPList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPList.swift; sourceTree = "<group>"; };
+		61173A23283D7D11005399F4 /* SPFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPFile.swift; sourceTree = "<group>"; };
+		61173A24283D7D11005399F4 /* SPFolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPFolder.swift; sourceTree = "<group>"; };
+		61173A25283D7D11005399F4 /* SPAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAttachment.swift; sourceTree = "<group>"; };
+		61173A26283D7D11005399F4 /* SPListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPListItem.swift; sourceTree = "<group>"; };
+		61173A28283D7D11005399F4 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		61173A29283D7D11005399F4 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		61173A2A283D7D11005399F4 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		61173A2B283D7D11005399F4 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		61173A2C283D7D11005399F4 /* Outlook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outlook.swift; sourceTree = "<group>"; };
+		61173A2D283D7D11005399F4 /* SharePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePoint.swift; sourceTree = "<group>"; };
+		61173A2E283D7D11005399F4 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		61173A2F283D7D11005399F4 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		61173A30283D7D11005399F4 /* OGOO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGOO.swift; sourceTree = "<group>"; };
+		61173A31283D7D11005399F4 /* OGOOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGOOHelper.swift; sourceTree = "<group>"; };
+		61173A32283D7D11005399F4 /* SSLPinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLPinning.swift; sourceTree = "<group>"; };
+		61173A34283D7D11005399F4 /* OGOOConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGOOConfig.swift; sourceTree = "<group>"; };
+		61173A37283D7D11005399F4 /* AttachmentActionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentActionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +132,10 @@
 		611739B8283D7989005399F4 /* JunoSwift */ = {
 			isa = PBXGroup;
 			children = (
+				61173A27283D7D11005399F4 /* Lib */,
+				61173A1F283D7D11005399F4 /* Models */,
+				61173A35283D7D11005399F4 /* Protocols */,
+				61173A33283D7D11005399F4 /* Resource */,
 				611739B9283D7989005399F4 /* JunoSwift.h */,
 				611739BA283D7989005399F4 /* JunoSwift.docc */,
 			);
@@ -120,6 +162,69 @@
 				61173A1B283D7A41005399F4 /* Info.plist */,
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		61173A1F283D7D11005399F4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				61173A20283D7D11005399F4 /* TokenStorage.swift */,
+				61173A21283D7D11005399F4 /* SharePoint */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		61173A21283D7D11005399F4 /* SharePoint */ = {
+			isa = PBXGroup;
+			children = (
+				61173A22283D7D11005399F4 /* SPList.swift */,
+				61173A23283D7D11005399F4 /* SPFile.swift */,
+				61173A24283D7D11005399F4 /* SPFolder.swift */,
+				61173A25283D7D11005399F4 /* SPAttachment.swift */,
+				61173A26283D7D11005399F4 /* SPListItem.swift */,
+			);
+			path = SharePoint;
+			sourceTree = "<group>";
+		};
+		61173A27283D7D11005399F4 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				61173A28283D7D11005399F4 /* NetworkClient.swift */,
+				61173A29283D7D11005399F4 /* Connection.swift */,
+				61173A2A283D7D11005399F4 /* Authentication.swift */,
+				61173A2B283D7D11005399F4 /* Log.swift */,
+				61173A2C283D7D11005399F4 /* Outlook.swift */,
+				61173A2D283D7D11005399F4 /* SharePoint.swift */,
+				61173A2E283D7D11005399F4 /* Resource.swift */,
+				61173A2F283D7D11005399F4 /* Graph.swift */,
+				61173A30283D7D11005399F4 /* OGOO.swift */,
+				61173A31283D7D11005399F4 /* OGOOHelper.swift */,
+				61173A32283D7D11005399F4 /* SSLPinning.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		61173A33283D7D11005399F4 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				61173A34283D7D11005399F4 /* OGOOConfig.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		61173A35283D7D11005399F4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				61173A36283D7D11005399F4 /* Attachment */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		61173A36283D7D11005399F4 /* Attachment */ = {
+			isa = PBXGroup;
+			children = (
+				61173A37283D7D11005399F4 /* AttachmentActionDelegate.swift */,
+			);
+			path = Attachment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +368,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				611739BB283D7989005399F4 /* JunoSwift.docc in Sources */,
+				61173A47283D7D11005399F4 /* OGOOHelper.swift in Sources */,
+				61173A49283D7D11005399F4 /* OGOOConfig.swift in Sources */,
+				61173A3F283D7D11005399F4 /* Connection.swift in Sources */,
+				61173A41283D7D11005399F4 /* Log.swift in Sources */,
+				61173A38283D7D11005399F4 /* TokenStorage.swift in Sources */,
+				61173A40283D7D11005399F4 /* Authentication.swift in Sources */,
+				61173A4A283D7D11005399F4 /* AttachmentActionDelegate.swift in Sources */,
+				61173A3D283D7D11005399F4 /* SPListItem.swift in Sources */,
+				61173A43283D7D11005399F4 /* SharePoint.swift in Sources */,
+				61173A48283D7D11005399F4 /* SSLPinning.swift in Sources */,
+				61173A3B283D7D11005399F4 /* SPFolder.swift in Sources */,
+				61173A3C283D7D11005399F4 /* SPAttachment.swift in Sources */,
+				61173A46283D7D11005399F4 /* OGOO.swift in Sources */,
+				61173A45283D7D11005399F4 /* Graph.swift in Sources */,
+				61173A3A283D7D11005399F4 /* SPFile.swift in Sources */,
+				61173A42283D7D11005399F4 /* Outlook.swift in Sources */,
+				61173A39283D7D11005399F4 /* SPList.swift in Sources */,
+				61173A3E283D7D11005399F4 /* NetworkClient.swift in Sources */,
+				61173A44283D7D11005399F4 /* Resource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +615,7 @@
 		611739CE283D7989005399F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -506,6 +631,7 @@
 		611739CF283D7989005399F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
