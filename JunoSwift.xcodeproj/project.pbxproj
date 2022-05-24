@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		611739BB283D7989005399F4 /* JunoSwift.docc in Sources */ = {isa = PBXBuildFile; fileRef = 611739BA283D7989005399F4 /* JunoSwift.docc */; };
+		611739C1283D7989005399F4 /* JunoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 611739B6283D7989005399F4 /* JunoSwift.framework */; };
+		611739C6283D7989005399F4 /* JunoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611739C5283D7989005399F4 /* JunoSwiftTests.swift */; };
+		611739C7283D7989005399F4 /* JunoSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 611739B9283D7989005399F4 /* JunoSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61173A0E283D7A40005399F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A0D283D7A40005399F4 /* AppDelegate.swift */; };
+		61173A10283D7A40005399F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A0F283D7A40005399F4 /* SceneDelegate.swift */; };
+		61173A12283D7A40005399F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A11283D7A40005399F4 /* ViewController.swift */; };
+		61173A15283D7A40005399F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61173A13283D7A40005399F4 /* Main.storyboard */; };
+		61173A17283D7A41005399F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61173A16283D7A41005399F4 /* Assets.xcassets */; };
+		61173A1A283D7A41005399F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61173A18283D7A41005399F4 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		611739C2283D7989005399F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 611739AD283D7989005399F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 611739B5283D7989005399F4;
+			remoteInfo = JunoSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		611739B6283D7989005399F4 /* JunoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JunoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		611739B9283D7989005399F4 /* JunoSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JunoSwift.h; sourceTree = "<group>"; };
+		611739BA283D7989005399F4 /* JunoSwift.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = JunoSwift.docc; sourceTree = "<group>"; };
+		611739C0283D7989005399F4 /* JunoSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JunoSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		611739C5283D7989005399F4 /* JunoSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunoSwiftTests.swift; sourceTree = "<group>"; };
+		61173A0B283D7A40005399F4 /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		61173A0D283D7A40005399F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		61173A0F283D7A40005399F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		61173A11283D7A40005399F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		61173A14283D7A40005399F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		61173A16283D7A41005399F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		61173A19283D7A41005399F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		61173A1B283D7A41005399F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		611739B3283D7989005399F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		611739BD283D7989005399F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				611739C1283D7989005399F4 /* JunoSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61173A08283D7A40005399F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		611739AC283D7989005399F4 = {
+			isa = PBXGroup;
+			children = (
+				611739B8283D7989005399F4 /* JunoSwift */,
+				611739C4283D7989005399F4 /* JunoSwiftTests */,
+				61173A0C283D7A40005399F4 /* Examples */,
+				611739B7283D7989005399F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		611739B7283D7989005399F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				611739B6283D7989005399F4 /* JunoSwift.framework */,
+				611739C0283D7989005399F4 /* JunoSwiftTests.xctest */,
+				61173A0B283D7A40005399F4 /* Examples.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		611739B8283D7989005399F4 /* JunoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				611739B9283D7989005399F4 /* JunoSwift.h */,
+				611739BA283D7989005399F4 /* JunoSwift.docc */,
+			);
+			path = JunoSwift;
+			sourceTree = "<group>";
+		};
+		611739C4283D7989005399F4 /* JunoSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				611739C5283D7989005399F4 /* JunoSwiftTests.swift */,
+			);
+			path = JunoSwiftTests;
+			sourceTree = "<group>";
+		};
+		61173A0C283D7A40005399F4 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				61173A0D283D7A40005399F4 /* AppDelegate.swift */,
+				61173A0F283D7A40005399F4 /* SceneDelegate.swift */,
+				61173A11283D7A40005399F4 /* ViewController.swift */,
+				61173A13283D7A40005399F4 /* Main.storyboard */,
+				61173A16283D7A41005399F4 /* Assets.xcassets */,
+				61173A18283D7A41005399F4 /* LaunchScreen.storyboard */,
+				61173A1B283D7A41005399F4 /* Info.plist */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		611739B1283D7989005399F4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				611739C7283D7989005399F4 /* JunoSwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		611739B5283D7989005399F4 /* JunoSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 611739CA283D7989005399F4 /* Build configuration list for PBXNativeTarget "JunoSwift" */;
+			buildPhases = (
+				611739B1283D7989005399F4 /* Headers */,
+				611739B2283D7989005399F4 /* Sources */,
+				611739B3283D7989005399F4 /* Frameworks */,
+				611739B4283D7989005399F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JunoSwift;
+			productName = JunoSwift;
+			productReference = 611739B6283D7989005399F4 /* JunoSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		611739BF283D7989005399F4 /* JunoSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 611739CD283D7989005399F4 /* Build configuration list for PBXNativeTarget "JunoSwiftTests" */;
+			buildPhases = (
+				611739BC283D7989005399F4 /* Sources */,
+				611739BD283D7989005399F4 /* Frameworks */,
+				611739BE283D7989005399F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				611739C3283D7989005399F4 /* PBXTargetDependency */,
+			);
+			name = JunoSwiftTests;
+			productName = JunoSwiftTests;
+			productReference = 611739C0283D7989005399F4 /* JunoSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		61173A0A283D7A40005399F4 /* Examples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61173A1C283D7A41005399F4 /* Build configuration list for PBXNativeTarget "Examples" */;
+			buildPhases = (
+				61173A07283D7A40005399F4 /* Sources */,
+				61173A08283D7A40005399F4 /* Frameworks */,
+				61173A09283D7A40005399F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Examples;
+			productName = Examples;
+			productReference = 61173A0B283D7A40005399F4 /* Examples.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		611739AD283D7989005399F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					611739B5283D7989005399F4 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					611739BF283D7989005399F4 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					61173A0A283D7A40005399F4 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 611739B0283D7989005399F4 /* Build configuration list for PBXProject "JunoSwift" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 611739AC283D7989005399F4;
+			productRefGroup = 611739B7283D7989005399F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				611739B5283D7989005399F4 /* JunoSwift */,
+				611739BF283D7989005399F4 /* JunoSwiftTests */,
+				61173A0A283D7A40005399F4 /* Examples */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		611739B4283D7989005399F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		611739BE283D7989005399F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61173A09283D7A40005399F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61173A1A283D7A41005399F4 /* LaunchScreen.storyboard in Resources */,
+				61173A17283D7A41005399F4 /* Assets.xcassets in Resources */,
+				61173A15283D7A40005399F4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		611739B2283D7989005399F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				611739BB283D7989005399F4 /* JunoSwift.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		611739BC283D7989005399F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				611739C6283D7989005399F4 /* JunoSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61173A07283D7A40005399F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61173A12283D7A40005399F4 /* ViewController.swift in Sources */,
+				61173A0E283D7A40005399F4 /* AppDelegate.swift in Sources */,
+				61173A10283D7A40005399F4 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		611739C3283D7989005399F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 611739B5283D7989005399F4 /* JunoSwift */;
+			targetProxy = 611739C2283D7989005399F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		61173A13283D7A40005399F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61173A14283D7A40005399F4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		61173A18283D7A41005399F4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61173A19283D7A41005399F4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		611739C8283D7989005399F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		611739C9283D7989005399F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		611739CB283D7989005399F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.JunoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		611739CC283D7989005399F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.JunoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		611739CE283D7989005399F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.JunoSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		611739CF283D7989005399F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.JunoSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		61173A1D283D7A41005399F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Examples/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.Examples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		61173A1E283D7A41005399F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Examples/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juno.Examples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		611739B0283D7989005399F4 /* Build configuration list for PBXProject "JunoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				611739C8283D7989005399F4 /* Debug */,
+				611739C9283D7989005399F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		611739CA283D7989005399F4 /* Build configuration list for PBXNativeTarget "JunoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				611739CB283D7989005399F4 /* Debug */,
+				611739CC283D7989005399F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		611739CD283D7989005399F4 /* Build configuration list for PBXNativeTarget "JunoSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				611739CE283D7989005399F4 /* Debug */,
+				611739CF283D7989005399F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61173A1C283D7A41005399F4 /* Build configuration list for PBXNativeTarget "Examples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61173A1D283D7A41005399F4 /* Debug */,
+				61173A1E283D7A41005399F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 611739AD283D7989005399F4 /* Project object */;
+}
