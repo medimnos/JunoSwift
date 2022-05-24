@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'JunoSwift'
-    s.version          = '1.1.1'
+    s.version          = '1.1.2'
     s.summary          = 'JunoSwift is a collection of fluent libraries for consuming SharePoint, Graph, and Office 365 REST APIs in a type-safe way.'
     
     # This description is used to generate tags and improve search results.
