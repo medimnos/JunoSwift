@@ -1,6 +1,6 @@
 //
 //  Connection.swift
-//  OGOO
+//  Juno
 //
 //  Created by Uğur Uğurlu on 10.02.2018.
 //  Copyright © 2018 Ugur Ugurlu. All rights reserved.
@@ -53,7 +53,7 @@ class Connection {
                     completionHandler(["update": true], nil)
                     break
                 case 503:
-                    if OGOOConfig.debugMode {
+                    if JunoConfig.debugMode {
                         print("------------------------RESPONSE------------------------------")
                         print("Resource: \(resource)")
                         print("Controller name: \(controllerName)")
@@ -92,7 +92,7 @@ class Connection {
                                     ]
                                 }
                                 
-                                if OGOOConfig.debugMode {
+                                if JunoConfig.debugMode {
                                     print("------------------------RESPONSE------------------------------")
                                     print("Resource: \(resource)")
                                     print("Controller name: \(controllerName)")
@@ -142,7 +142,7 @@ class Connection {
         
         var token: String = ""
         
-        if let resourceToken = OGOOConfig.tokenManager[resource] {
+        if let resourceToken = JunoConfig.tokenManager[resource] {
             token = resourceToken.getToken()
         }
         
@@ -167,7 +167,7 @@ class Connection {
         }
         
         //get resource url
-        let resourceUrl = OGOOConfig.tokenManager[resource]!.getUrl()
+        let resourceUrl = JunoConfig.tokenManager[resource]!.getUrl()
         
         var url: String = resourceUrl
         
@@ -177,7 +177,7 @@ class Connection {
             url += "\(controllerName)"
         }
         
-        if OGOOConfig.debugMode {
+        if JunoConfig.debugMode {
             print("------------------------REQUEST------------------------------")
             print("Resource: \(resource)")
             print("Headers: \(defaultHeaders)")

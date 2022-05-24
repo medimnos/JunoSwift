@@ -1,6 +1,6 @@
 //
-//  OGOOConfig.swift
-//  OGOO
+//  JunoConfig.swift
+//  Juno
 //
 //  Created by Uğur Uğurlu on 11.02.2018.
 //  Copyright © 2018 Ugur Ugurlu. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class OGOOConfig {
+class JunoConfig {
     
     static var clientId: String = ""
     static var redirectUri: String = ""

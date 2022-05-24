@@ -1,6 +1,6 @@
 //
 //  NetworkClient.swift
-//  OGOOSwift
+//  JunoSwift
 //
 //  Created by Uğur Uğurlu on 14.10.2021.
 //

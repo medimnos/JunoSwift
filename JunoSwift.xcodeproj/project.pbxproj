@@ -31,10 +31,9 @@
 		61173A43283D7D11005399F4 /* SharePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A2D283D7D11005399F4 /* SharePoint.swift */; };
 		61173A44283D7D11005399F4 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A2E283D7D11005399F4 /* Resource.swift */; };
 		61173A45283D7D11005399F4 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A2F283D7D11005399F4 /* Graph.swift */; };
-		61173A46283D7D11005399F4 /* OGOO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A30283D7D11005399F4 /* OGOO.swift */; };
-		61173A47283D7D11005399F4 /* OGOOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A31283D7D11005399F4 /* OGOOHelper.swift */; };
-		61173A48283D7D11005399F4 /* SSLPinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A32283D7D11005399F4 /* SSLPinning.swift */; };
-		61173A49283D7D11005399F4 /* OGOOConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A34283D7D11005399F4 /* OGOOConfig.swift */; };
+		61173A46283D7D11005399F4 /* Juno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A30283D7D11005399F4 /* Juno.swift */; };
+		61173A47283D7D11005399F4 /* JunoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A31283D7D11005399F4 /* JunoHelper.swift */; };
+		61173A49283D7D11005399F4 /* JunoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A34283D7D11005399F4 /* JunoConfig.swift */; };
 		61173A4A283D7D11005399F4 /* AttachmentActionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61173A37283D7D11005399F4 /* AttachmentActionDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,10 +75,9 @@
 		61173A2D283D7D11005399F4 /* SharePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePoint.swift; sourceTree = "<group>"; };
 		61173A2E283D7D11005399F4 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		61173A2F283D7D11005399F4 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
-		61173A30283D7D11005399F4 /* OGOO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGOO.swift; sourceTree = "<group>"; };
-		61173A31283D7D11005399F4 /* OGOOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGOOHelper.swift; sourceTree = "<group>"; };
-		61173A32283D7D11005399F4 /* SSLPinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLPinning.swift; sourceTree = "<group>"; };
-		61173A34283D7D11005399F4 /* OGOOConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OGOOConfig.swift; sourceTree = "<group>"; };
+		61173A30283D7D11005399F4 /* Juno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Juno.swift; sourceTree = "<group>"; };
+		61173A31283D7D11005399F4 /* JunoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunoHelper.swift; sourceTree = "<group>"; };
+		61173A34283D7D11005399F4 /* JunoConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunoConfig.swift; sourceTree = "<group>"; };
 		61173A37283D7D11005399F4 /* AttachmentActionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentActionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,8 +165,8 @@
 		61173A1F283D7D11005399F4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				61173A20283D7D11005399F4 /* TokenStorage.swift */,
 				61173A21283D7D11005399F4 /* SharePoint */,
+				61173A20283D7D11005399F4 /* TokenStorage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,9 +194,8 @@
 				61173A2D283D7D11005399F4 /* SharePoint.swift */,
 				61173A2E283D7D11005399F4 /* Resource.swift */,
 				61173A2F283D7D11005399F4 /* Graph.swift */,
-				61173A30283D7D11005399F4 /* OGOO.swift */,
-				61173A31283D7D11005399F4 /* OGOOHelper.swift */,
-				61173A32283D7D11005399F4 /* SSLPinning.swift */,
+				61173A30283D7D11005399F4 /* Juno.swift */,
+				61173A31283D7D11005399F4 /* JunoHelper.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -206,7 +203,7 @@
 		61173A33283D7D11005399F4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				61173A34283D7D11005399F4 /* OGOOConfig.swift */,
+				61173A34283D7D11005399F4 /* JunoConfig.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -368,8 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				611739BB283D7989005399F4 /* JunoSwift.docc in Sources */,
-				61173A47283D7D11005399F4 /* OGOOHelper.swift in Sources */,
-				61173A49283D7D11005399F4 /* OGOOConfig.swift in Sources */,
+				61173A47283D7D11005399F4 /* JunoHelper.swift in Sources */,
+				61173A49283D7D11005399F4 /* JunoConfig.swift in Sources */,
 				61173A3F283D7D11005399F4 /* Connection.swift in Sources */,
 				61173A41283D7D11005399F4 /* Log.swift in Sources */,
 				61173A38283D7D11005399F4 /* TokenStorage.swift in Sources */,
@@ -377,10 +374,9 @@
 				61173A4A283D7D11005399F4 /* AttachmentActionDelegate.swift in Sources */,
 				61173A3D283D7D11005399F4 /* SPListItem.swift in Sources */,
 				61173A43283D7D11005399F4 /* SharePoint.swift in Sources */,
-				61173A48283D7D11005399F4 /* SSLPinning.swift in Sources */,
 				61173A3B283D7D11005399F4 /* SPFolder.swift in Sources */,
 				61173A3C283D7D11005399F4 /* SPAttachment.swift in Sources */,
-				61173A46283D7D11005399F4 /* OGOO.swift in Sources */,
+				61173A46283D7D11005399F4 /* Juno.swift in Sources */,
 				61173A45283D7D11005399F4 /* Graph.swift in Sources */,
 				61173A3A283D7D11005399F4 /* SPFile.swift in Sources */,
 				61173A42283D7D11005399F4 /* Outlook.swift in Sources */,

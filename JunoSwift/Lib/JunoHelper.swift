@@ -1,6 +1,6 @@
 //
-//  OGOOHelper.swift
-//  OGOO
+//  JunoHelper.swift
+//  Juno
 //
 //  Created by Uğur Uğurlu on 14.02.2018.
 //  Copyright © 2018 Ugur Ugurlu. All rights reserved.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-public class OGOOHelper {
+public class JunoHelper {
     
     //create singleton instance
-    public static var shared = OGOOHelper()
+    public static var shared = JunoHelper()
     
     private init(){}
     

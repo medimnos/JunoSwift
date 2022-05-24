@@ -1,6 +1,6 @@
 //
 //  Authentication.swift
-//  OGOO
+//  Juno
 //
 //  Created by Uğur Uğurlu on 11.02.2018.
 //  Copyright © 2018 Ugur Ugurlu. All rights reserved.
@@ -47,7 +47,7 @@ public class Authentication {
     
     //MSAL authentication context object
     private func getAuthContext() -> String {
-        return "https://login.microsoftonline.com/\(OGOOConfig.tenant)"
+        return "https://login.microsoftonline.com/\(JunoConfig.tenant)"
     }
     
     // get scope for resource name
@@ -56,7 +56,7 @@ public class Authentication {
         
         if let list = self.scopes[resource] {
             for item in list {
-                let result = "\(resource == .SharePoint ? "https://\(OGOOConfig.siteUrl)/" : "")\(item)"
+                let result = "\(resource == .SharePoint ? "https://\(JunoConfig.siteUrl)/" : "")\(item)"
                 scopeList.append(result)
             }
         }
@@ -80,7 +80,7 @@ public class Authentication {
     
     //only authenticated users call this method
     //with different resource name
-    //example: https://ogoodigital.sharepoint.com etc.
+    //example: https://Junodigital.sharepoint.com etc.
     //@params: resource: Resource (example=https://graph.microsoft.com)
     //@completionHandler: Bool
     //method access: public
@@ -161,7 +161,7 @@ public class Authentication {
         }
         
         if let token = result?.accessToken {
-            OGOOConfig.tokenManager[resource] = TokenStorage(resourceName: resource, token: token, resourceUrl: OGOOConfig.resources[resource] as! String)
+            JunoConfig.tokenManager[resource] = TokenStorage(resourceName: resource, token: token, resourceUrl: JunoConfig.resources[resource] as! String)
         }
         
         let info = result?.account.accountClaims
@@ -185,7 +185,7 @@ public class Authentication {
             let dict = try JSONSerialization.data(withJSONObject: info ?? [:], options: .prettyPrinted)
             let json = NSString(data: dict, encoding: String.Encoding.utf8.rawValue)
             self.userClaims = json
-            if OGOOConfig.debugMode {
+            if JunoConfig.debugMode {
                 print(resource, result?.accessToken)
                 print(json)
             }
@@ -198,7 +198,7 @@ public class Authentication {
     public func getTokenForResource(resource: Resource) -> String {
         var token: String = ""
         
-        if let resourceToken = OGOOConfig.tokenManager[resource] {
+        if let resourceToken = JunoConfig.tokenManager[resource] {
             token = resourceToken.getToken()
         }
         
@@ -221,7 +221,7 @@ public class Authentication {
     //method access: public
     public func clearCredentials(completionHandler: @escaping()->()){
         self.removedCachedUser {
-            OGOOConfig.tokenManager = [:]
+            JunoConfig.tokenManager = [:]
             
             // Remove all the cookies from this application's sandbox. The authorization code is stored in the cookies and ADAL will try to get to access tokens based on auth code in the cookie.
             let cookieStore = HTTPCookieStorage.shared
@@ -256,7 +256,7 @@ public class Authentication {
     
     private func createApplication() -> MSALPublicClientApplication? {
         if self.applicationContext == nil {
-            let config = MSALPublicClientApplicationConfig(clientId: OGOOConfig.clientId)
+            let config = MSALPublicClientApplicationConfig(clientId: JunoConfig.clientId)
             if let application = try? MSALPublicClientApplication(configuration: config) {
                 self.applicationContext = application
             }

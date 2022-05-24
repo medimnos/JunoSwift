@@ -1,6 +1,6 @@
 //
 //  SharePoint.swift
-//  OGOO
+//  Juno
 //
 //  Created by Uğur Uğurlu on 10.02.2018.
 //  Copyright © 2018 Ugur Ugurlu. All rights reserved.
@@ -40,7 +40,7 @@ public class SharePoint {
     //completionHandler: (Void)
     //method access: public
     public func updateSiteUrl(siteUrl: String) {
-        OGOOConfig.resources[.SharePoint] = siteUrl as AnyObject
+        JunoConfig.resources[.SharePoint] = siteUrl as AnyObject
         self.siteUrl = siteUrl
     }
     
@@ -62,7 +62,7 @@ public class SharePoint {
     //completionHandler: (String)
     //method access: private
     func getFormDigestValue(completionHandler: @escaping(String)->()){
-        Connection.shared.request(method: .post, resource: .SharePoint, endPoint: "\(OGOOConfig.resources[.SharePoint] as! String)/_api/contextinfo") { (success, error) in
+        Connection.shared.request(method: .post, resource: .SharePoint, endPoint: "\(JunoConfig.resources[.SharePoint] as! String)/_api/contextinfo") { (success, error) in
             var formDigestValue: String = ""
             if let dict = success {
                 if let digest = dict["FormDigestValue"] as? String {
@@ -120,7 +120,7 @@ public class SharePoint {
             ] as NSDictionary
         }else {
             if let query = withQuery {
-                url += OGOOHelper.shared.parseQuery(query: query)
+                url += JunoHelper.shared.parseQuery(query: query)
             }
         }
         
@@ -168,7 +168,7 @@ public class SharePoint {
         }
         
         if let query = withQuery {
-            url += OGOOHelper.shared.parseQuery(query: query)
+            url += JunoHelper.shared.parseQuery(query: query)
         }
         
         Connection.shared.request(method: .get, resource: .SharePoint, controllerName: url) { (success, error) in
@@ -191,7 +191,7 @@ public class SharePoint {
         var url: String = "\(serverRelativeUrl)\(type != "" ? "/\(type)" : "")"
         
         if let query = withQuery {
-            url += OGOOHelper.shared.parseQuery(query: query)
+            url += JunoHelper.shared.parseQuery(query: query)
         }
         
         Connection.shared.request(method: .get, resource: .SharePoint, controllerName: url) { (success, error) in
@@ -257,7 +257,7 @@ public class SharePoint {
         if let siteName = self.siteName {
             var url: String = "\(siteName)/_vti_bin/ListData.svc/UserInformationList"
             if let query = withQuery {
-                url += OGOOHelper.shared.parseQuery(query: query)
+                url += JunoHelper.shared.parseQuery(query: query)
             }
             
             Connection.shared.request(method: .get, resource: .SharePoint, controllerName: url) { (success, error) in
@@ -278,7 +278,7 @@ public class SharePoint {
         if let siteName = self.siteName {
             var url: String = "\(siteName)/_api/SP.UserProfiles.PeopleManager/getPeopleFollowedByMe"
             if let query = withQuery {
-                url += OGOOHelper.shared.parseQuery(query: query)
+                url += JunoHelper.shared.parseQuery(query: query)
             }
             
             Connection.shared.request(method: .get, resource: .SharePoint, controllerName: url) { (success, error) in
@@ -299,7 +299,7 @@ public class SharePoint {
         if let siteName = self.siteName {
             var url: String = "\(siteName)/_api/SP.UserProfiles.PeopleManager/getmyproperties"
             if let query = withQuery {
-                url += OGOOHelper.shared.parseQuery(query: query)
+                url += JunoHelper.shared.parseQuery(query: query)
             }
             
             Connection.shared.request(method: .get, resource: .SharePoint, controllerName: url) { (success, error) in
@@ -337,7 +337,7 @@ public class SharePoint {
             let replacedStr: String = accountName.replacingOccurrences(of: "#", with: "%23").replacingOccurrences(of: "|", with: "%7C")
             var url: String = "\(siteName)/_api/SP.UserProfiles.PeopleManager/getpropertiesfor(accountName=@v)?@v='\(replacedStr)'"
             if let query = withQuery {
-                url += OGOOHelper.shared.parseQuery(query: query)
+                url += JunoHelper.shared.parseQuery(query: query)
             }
             
             Connection.shared.request(method: .get, resource: .SharePoint, controllerName: url) { (success, error) in
@@ -593,7 +593,7 @@ public class SharePoint {
     public func search(query: [String: AnyObject], completionHandler: @escaping(NSArray, Int)->()) {
         if let siteName = self.siteName {
             var url: String = "\(siteName)/_api/search/query"
-            url += OGOOHelper.shared.parseQuery(query: query, avoidPrefix: true)
+            url += JunoHelper.shared.parseQuery(query: query, avoidPrefix: true)
             if let replaceStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                 Connection.shared.request(method: .get, resource: .SharePoint, controllerName: replaceStr) { (success, error) in
                     var result: NSArray = []
@@ -801,7 +801,7 @@ public class SharePoint {
         }
         
         if let query = withQuery {
-            url += OGOOHelper.shared.parseQuery(query: query)
+            url += JunoHelper.shared.parseQuery(query: query)
         }
         
         Connection.shared.request(method: .get, resource: .SharePoint, controllerName: url) { (success, error) in
@@ -820,7 +820,7 @@ public class SharePoint {
     public func batchRequest(batchQuery: [AnyObject], completionHandler: @escaping SPListArrayHandler) {
         
         var batchContents = [String]()
-        let resourceUrl = OGOOConfig.tokenManager[.SharePoint]!.getUrl()
+        let resourceUrl = JunoConfig.tokenManager[.SharePoint]!.getUrl()
         let uuid = UUID().uuidString.lowercased()
         
         var siteName = ""
@@ -846,7 +846,7 @@ public class SharePoint {
                     }
                 }
                 
-                url += OGOOHelper.shared.parseQuery(query: spQuery)
+                url += JunoHelper.shared.parseQuery(query: spQuery)
                 
                 let batchBody = """
                 --batch_\(uuid)
@@ -882,7 +882,7 @@ public class SharePoint {
                     let responseLines = batch.components(separatedBy: "\n")
                     
                     for currentLine in responseLines {
-                        if let dict = OGOOHelper.shared.parseJSONString(str: currentLine) as? NSDictionary{
+                        if let dict = JunoHelper.shared.parseJSONString(str: currentLine) as? NSDictionary{
                             let spList = SPList(listName: "")
                             if let nextPage = dict["odata.nextLink"] as? String {
                                 spList.nextPage = nextPage

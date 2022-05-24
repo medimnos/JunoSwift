@@ -1,6 +1,6 @@
 //
 //  Graph.swift
-//  OGOO
+//  Juno
 //
 //  Created by Uğur Uğurlu on 10.02.2018.
 //  Copyright © 2018 Ugur Ugurlu. All rights reserved.
@@ -31,8 +31,8 @@ public class Graph {
                 }
                 
                 if let spResourceName = dict["webUrl"] as? String {
-                    OGOOConfig.tokenManager[.Outlook] = TokenStorage(resourceName: .Outlook, token: "", resourceUrl: OGOOConfig.resources[.Outlook] as! String)
-                    OGOOConfig.tokenManager[.SharePoint] = TokenStorage(resourceName: .SharePoint, token: "", resourceUrl: spResourceName)
+                    JunoConfig.tokenManager[.Outlook] = TokenStorage(resourceName: .Outlook, token: "", resourceUrl: JunoConfig.resources[.Outlook] as! String)
+                    JunoConfig.tokenManager[.SharePoint] = TokenStorage(resourceName: .SharePoint, token: "", resourceUrl: spResourceName)
                 }
             }
             completionHandler(webUrl)

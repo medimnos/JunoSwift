@@ -1,6 +1,6 @@
 //
 //  SPList.swift
-//  OGOO
+//  Juno
 //
 //  Created by Uğur Uğurlu on 14.02.2018.
 //  Copyright © 2018 Ugur Ugurlu. All rights reserved.
