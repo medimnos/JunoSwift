@@ -148,6 +148,8 @@ public class Authentication {
         application.acquireToken(with: interactiveParameters) { (result, error) in
             if error == nil {
                 self.processMSALResult(result: result, error: error, resource: resource, completionHandler: completionHandler)
+            } else {
+                completionHandler(false)
             }
         }
     }

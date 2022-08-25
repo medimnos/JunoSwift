@@ -13,6 +13,7 @@ class Connection {
     
     //create singleton instance
     static let shared = Connection()
+    var loginAttemptCount = 0
     
     private init(){}
     
@@ -37,16 +38,19 @@ class Connection {
                 switch statusCode {
                 //unauthorized
                 case 401:
-                    //re-connect ADAL SDK
-                    Authentication.shared.acquireTokenWithResource(resource: resource, viewController: Authentication.shared.viewController, completionHandler: { (isAuth) in
-                        if isAuth {
-                            NotificationCenter.default.post(name: NSNotification.Name("TokenRefresh"), object: nil)
-                        }else {
-                            Authentication.shared.clearCredentials(completionHandler: {
-                                completionHandler(nil, ["error": "Unauthorized user!"])
-                            })
-                        }
-                    })
+                    if self.loginAttemptCount < 5 {
+                        //re-connect ADAL SDK
+                        Authentication.shared.acquireTokenWithResource(resource: resource, viewController: Authentication.shared.viewController, completionHandler: { (isAuth) in
+                            self.loginAttemptCount += 1
+                            if isAuth {
+                                NotificationCenter.default.post(name: NSNotification.Name("TokenRefresh"), object: nil)
+                            }else {
+                                self.fullLogout(completionHandler: completionHandler)
+                            }
+                        })
+                    } else {
+                        self.fullLogout(completionHandler: completionHandler)
+                    }
                     break
                 //no content
                 case 204:
@@ -126,6 +130,14 @@ class Connection {
             }
             
         }
+    }
+    
+    private func fullLogout(completionHandler: @escaping CompletionHandler) {
+        Authentication.shared.clearCredentials(completionHandler: {
+            self.loginAttemptCount = 0
+            NotificationCenter.default.post(name: NSNotification.Name("Logout"), object: nil)
+            completionHandler(nil, ["error": "Unauthorized user!"])
+        })
     }
     
     //global connection manager
