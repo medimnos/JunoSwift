@@ -26,18 +26,10 @@ public class Authentication {
     
     var defaultScopes: [Resource: [String]] = [
         .Graph: [
-            "User.ReadWrite",
-            "User.ReadBasic.All",
-            "MailboxSettings.ReadWrite",
-            "Calendars.ReadWrite"
+            "User.ReadBasic.All"
         ],
         .SharePoint: [
-            "User.Read.All",
-            "Sites.Search.All",
-            "MyFiles.Read",
-            "MyFiles.Write",
-            "AllSites.Read",
-            "AllSites.Write"
+            "AllSites.Read"
         ]
     ]
     
