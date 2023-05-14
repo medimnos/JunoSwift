@@ -483,9 +483,15 @@ public class SharePoint {
     //completionHandler: (Bool)
     //type: POST
     //method access: only framework
-    public func deleteListItem(item: SPListItem, permanent: Bool, completionHandler: @escaping(Bool)->()){
+    public func deleteListItem(item: SPListItem, subSite: String = "", permanent: Bool, completionHandler: @escaping(Bool)->()){
         
         var url: String = "\(self.listPrefix)\(item.url)"
+        
+        if subSite != "" {
+            if let _siteName = self.siteName {
+                url = "\(_siteName)/\(subSite)/_api/web/\(item.url)"
+            }
+        }
         
         var headers = [String: AnyObject]()
         
@@ -954,6 +960,21 @@ public class SharePoint {
                 headers["X-RequestDigest"] = formDigestValue as AnyObject
                 
                 Connection.shared.request(method: .post, resource: .SharePoint, controllerName: url, parameters: payload, headers: headers, completionHandler: completionHandler)
+            }
+        }
+    }
+    
+    // EffectiveBasePermissions
+    public func effectiveBasePermissions(listName: String, subSite: String = "", completionHandler: @escaping(_ success: NSDictionary?, _ error: NSDictionary?) ->()) {
+        if let siteName = self.siteName {
+            let url = "\(siteName)\(subSite != "" ? "/\(subSite)" : "")/_api/web/getList('\(siteName)\(subSite != "" ? "/\(subSite)" : "")/Lists/\(listName)')/EffectiveBasePermissions"
+            
+            var headers = [String: AnyObject]()
+            
+            self.getFormDigestValue { (formDigestValue) in
+                headers["X-RequestDigest"] = formDigestValue as AnyObject
+                
+                Connection.shared.request(method: .get, resource: .SharePoint, controllerName: url, parameters: [:], headers: headers, completionHandler: completionHandler)
             }
         }
     }
