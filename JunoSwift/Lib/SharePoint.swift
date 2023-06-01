@@ -34,6 +34,8 @@ public class SharePoint {
     
     //site name
     private var siteName: String?
+    public var digestDate: Date!
+    public var digestValue: String = ""
     
     //update sharepoint site url
     //params: siteUrl (String)
@@ -61,12 +63,31 @@ public class SharePoint {
     //get form digest value
     //completionHandler: (String)
     //method access: private
-    func getFormDigestValue(completionHandler: @escaping(String)->()){
-        Connection.shared.request(method: .post, resource: .SharePoint, endPoint: "\(JunoConfig.resources[.SharePoint] as! String)/_api/contextinfo") { (success, error) in
+    public func getFormDigestValue(completionHandler: @escaping(String)->()){
+        var isDigestExpired = true
+        if self.digestDate != nil {
+            let now = Date()
+            if let second = Calendar.current.dateComponents([.second], from: self.digestDate, to: now).second {
+                isDigestExpired = second > 1500
+            }
+        }
+        
+        if isDigestExpired {
+            getDigest(completionHandler: completionHandler)
+        } else {
+            completionHandler(self.digestValue)
+        }
+
+    }
+    
+    private func getDigest(completionHandler: @escaping(String)->()) {
+        Connection.shared.request(method: .post, resource: .SharePoint, endPoint: "\(siteUrl)/_api/contextinfo") { (success, error) in
             var formDigestValue: String = ""
             if let dict = success {
                 if let digest = dict["FormDigestValue"] as? String {
                     formDigestValue = digest
+                    self.digestDate = Date()
+                    self.digestValue = formDigestValue
                 }
             }
             completionHandler(formDigestValue)
@@ -979,5 +1000,3 @@ public class SharePoint {
         }
     }
 }
-
-
