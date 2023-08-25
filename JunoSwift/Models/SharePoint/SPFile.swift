@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class SPFile: NSObject {
+public class SPFile: NSObject, NSSecureCoding {
     public var size: String?
     public var name: String?
     public var serverRelativeUrl: String?
@@ -33,6 +33,35 @@ public class SPFile: NSObject {
         if let fileName = self.name {
             self.fileExtension = URL(fileURLWithPath: fileName).pathExtension
         }
+    }
+    
+    public static var supportsSecureCoding: Bool {
+        return true
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        self.size = aDecoder.decodeObject(forKey: "size") as? String
+        self.name = aDecoder.decodeObject(forKey: "name") as? String
+        self.serverRelativeUrl = aDecoder.decodeObject(forKey: "serverRelativeUrl") as? String
+        self.title = aDecoder.decodeObject(forKey: "title") as? String
+        self.uniqueId = aDecoder.decodeObject(forKey: "uniqueId") as? String
+        self.createdDate = aDecoder.decodeObject(forKey: "createdDate") as? String
+        self.lastModifiedDate = aDecoder.decodeObject(forKey: "lastModifiedDate") as? String
+        self.fileUrl = aDecoder.decodeObject(forKey: "fileUrl") as? String
+        self.id = aDecoder.decodeObject(forKey: "id") as? String
+        self.fileExtension = aDecoder.decodeObject(forKey: "fileExtension") as? String ?? ""
+        
+    }
+    
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: "id")
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(serverRelativeUrl, forKey: "serverRelativeUrl")
+        aCoder.encode(title, forKey: "title")
+        aCoder.encode(createdDate, forKey: "createdDate")
+        aCoder.encode(lastModifiedDate, forKey: "lastModifiedDate")
+        aCoder.encode(fileUrl, forKey: "fileUrl")
+        aCoder.encode(fileExtension, forKey: "fileExtension")
     }
 }
 
