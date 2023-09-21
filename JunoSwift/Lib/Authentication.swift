@@ -17,7 +17,7 @@ public class Authentication {
         self.scopes = self.defaultScopes
     }
     
-    public var userClaims: NSString?
+    public var userClaims: [String: Any]?
     private var upn = ""
     private var idToken = ""
     private var expireDate: Date!
@@ -178,7 +178,7 @@ public class Authentication {
         do {
             let dict = try JSONSerialization.data(withJSONObject: info ?? [:], options: .prettyPrinted)
             let json = NSString(data: dict, encoding: String.Encoding.utf8.rawValue)
-            self.userClaims = json
+            self.userClaims = info
             if JunoConfig.debugMode {
                 print(resource, result?.accessToken)
                 print(json)
