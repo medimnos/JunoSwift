@@ -480,9 +480,13 @@ public class SharePoint {
     //completionHandler: (Bool)
     //type: POST
     //method access: public
-    public func moveTo(fileUrl: String, newUrl: String, completionHandler: @escaping(Bool)->()) {
+    public func moveTo(fileUrl: String, newUrl: String, subSite: String, completionHandler: @escaping(Bool)->()) {
         if let siteName = self.siteName {
-            let url: String = "\(siteName)/_api/web/getfilebyserverrelativeurl('\(fileUrl)')/moveto(newurl='\(newUrl)',flags=1)"
+            var url: String = "\(siteName)/_api/web/getfilebyserverrelativeurl('\(fileUrl)')/moveto(newurl='\(newUrl)',flags=1)"
+            
+            if !subSite.isEmpty{
+                url = "\(siteName)/\(subSite)/_api/web/getfilebyserverrelativeurl('\(fileUrl)')/moveto(newurl='\(newUrl)',flags=1)"
+            }
             
             var headers = [String: AnyObject]()
             self.getFormDigestValue { (formDigestValue) in
@@ -779,10 +783,12 @@ public class SharePoint {
     }
     
     //like/unlike list item
-    public func likeUnlikeListItem(action: Bool, itemId: Int, listId: String, completionHandler: @escaping(NSDictionary)->()) {
+    public func likeUnlikeListItem(action: Bool, itemId: Int, listId: String, subSite: String = "", completionHandler: @escaping(NSDictionary)->()) {
         if let siteName = self.siteName {
-            let url: String = "\(siteName)/_vti_bin/client.svc/ProcessQuery"
-            
+            var url: String = "\(siteName)/_vti_bin/client.svc/ProcessQuery"
+            if !subSite.isEmpty{
+                url = "\(siteName)/\(subSite)/_vti_bin/client.svc/ProcessQuery"
+            }
             let xml = """
             <Request xmlns="http://schemas.microsoft.com/sharepoint/clientquery/2009" SchemaVersion="15.0.0.0" LibraryVersion="16.0.0.0" ApplicationName="Javascript Library">
             <Actions>
