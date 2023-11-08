@@ -16,6 +16,7 @@ public class SPList: NSObject {
     private(set) var listUrl: String = ""
     private(set) var subSite: String = ""
     public var withId: Bool = false
+    public var absoluteUrl: String = ""
     
     public init(listName: String, defaultListType: String = "Items", withId: Bool = false) {
         super.init()
@@ -34,7 +35,7 @@ public class SPList: NSObject {
 
 extension SPList {
     
-    func updateSubSite(subSite: String, listPrefix: String) {
+    public func updateSubSite(subSite: String, listPrefix: String) {
         self.subSite = subSite
         
         self.updateListUrl(listPrefix: listPrefix)
@@ -43,5 +44,12 @@ extension SPList {
     private func updateListUrl(listPrefix: String = "/Lists") {
         let siteName = SharePoint.shared.getSiteName()
         self.listUrl = "GetList('\(siteName)\(self.subSite != "" ? "/\(self.subSite)" : "")\(listPrefix)/\(self.listName)')/\(self.defaultListType)"
+    }
+    
+    public func setAbsoluteUrl(relativePath: String, subSite: String = "") {
+        let resourceUrl = JunoConfig.tokenManager[.SharePoint]!.getUrl()
+        let siteName = SharePoint.shared.getSiteName()
+        
+        self.absoluteUrl = "\(resourceUrl)\(siteName)/\(subSite != "" ? "\(subSite)/" : "")_api/web/\(relativePath)"
     }
 }
