@@ -480,7 +480,7 @@ public class SharePoint {
     //completionHandler: (Bool)
     //type: POST
     //method access: public
-    public func moveTo(fileUrl: String, newUrl: String, subSite: String, completionHandler: @escaping(Bool)->()) {
+    public func moveTo(fileUrl: String, newUrl: String, subSite: String = "", completionHandler: @escaping(Bool)->()) {
         if let siteName = self.siteName {
             var url: String = "\(siteName)/_api/web/getfilebyserverrelativeurl('\(fileUrl)')/moveto(newurl='\(newUrl)',flags=1)"
             
@@ -621,12 +621,16 @@ public class SharePoint {
     }
     
     //people search
-    public func search(query: [String: AnyObject], completionHandler: @escaping(NSArray, Int)->()) {
+    public func search(query: [String: AnyObject], subsite: String = "", completionHandler: @escaping(NSArray, Int)->()) {
         if let siteName = self.siteName {
             var url: String = "\(siteName)/_api/search/query"
+            
+            if !subsite.isEmpty{
+                url = "\(siteName)/\(subsite)/_api/search/query"
+            }
             url += JunoHelper.shared.parseQuery(query: query, avoidPrefix: true)
             if let replaceStr = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-                Connection.shared.request(method: .get, resource: .SharePoint, controllerName: replaceStr) { (success, error) in
+                Connection.shared.request(method: .get, resource: .SharePoint, controllerName: replaceStr.replacingOccurrences(of: "%2522", with: "%22")) { (success, error) in
                     var result: NSArray = []
                     var totalRow: Int = 0
                     if error == nil {
