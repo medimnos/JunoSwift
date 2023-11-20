@@ -885,6 +885,10 @@ public class SharePoint {
                 
                 url += JunoHelper.shared.parseQuery(query: spQuery)
                 
+                if spList.absoluteUrl != "" {
+                    url = spList.absoluteUrl
+                }
+                
                 let batchBody = """
                 --batch_\(uuid)
                 Content-Type: application/http
@@ -932,6 +936,12 @@ public class SharePoint {
                                     }
                                 }
                             }
+                            
+                            if let value = dict.value(forKeyPath: "value") as? Int {
+                                let spListItem = SPListItem(id: 0, listName: spList.listName, dictionary: ["count": value])
+                                spList.listItems.append(spListItem)
+                            }
+                            
                             spListArray.append(spList)
                         }
                     }
