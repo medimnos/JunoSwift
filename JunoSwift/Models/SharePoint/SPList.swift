@@ -33,12 +33,16 @@ public class SPList: NSObject {
     }
 }
 
-extension SPList {
+public extension SPList {
     
     public func updateSubSite(subSite: String, listPrefix: String) {
         self.subSite = subSite
         
         self.updateListUrl(listPrefix: listPrefix)
+    }
+    
+    func updateCurrentWithSubsite(subsite:String){
+        self.subSite = subsite
     }
     
     private func updateListUrl(listPrefix: String = "/Lists") {
