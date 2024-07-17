@@ -571,9 +571,7 @@ public class SharePoint {
     }
     
     //upload file to document library
-    public func uploadFileToDocumentLibrary(folderName: String, file: Data, completionHandler: @escaping(NSDictionary)->()){
-        
-        let fileName: String = "\(String(Date().timeIntervalSince1970)).jpg"
+    public func uploadFileToDocumentLibrary(folderName: String, file: Data, fileName: String = "\(String(Date().timeIntervalSince1970)).png", completionHandler: @escaping(NSDictionary)->()){
         
         self.getFormDigestValue { (formDigestValue) in
             let headers = [
