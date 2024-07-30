@@ -608,7 +608,9 @@ public class SharePoint {
             ] as [String: AnyObject]
             
             if let siteName = self.siteName {
-                let url: String = "\(siteName)\(subSite != "" ? "/\(subSite)/_api/Web/getfolderbyserverrelativeurl('\(siteName)\(subSite != "" ? "/\(subSite)/\(folderName)')/Files/Add(url='\(fileName)',overwrite=true)"
+                
+                let url: String = "\(siteName)\(subsite != "" ? "/\(subsite)" : "")/_api/Web/getfolderbyserverrelativeurl('\(siteName)\(subsite != "" ? "/\(subsite)" : "")/\(folderName)')/Files/Add(url='\(fileName)',overwrite=true)"
+                
                 if let link = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                     if let replacedPath = link.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                         Connection.shared.request(method: .post, resource: .SharePoint, controllerName: replacedPath, headers: headers, isBinary: file, completionHandler: { (success, error) in
