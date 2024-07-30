@@ -209,7 +209,7 @@ public class SharePoint {
     //method access: public
     public func getDocuments(serverRelativeUrl: String, withQuery: [String: AnyObject]?, type: String, completionHandler: @escaping SPDocumentHandler){
         
-        var url: String = "\(serverRelativeUrl)\(type != "" ? "/\(type)" : "")"
+        var url: String = "\(serverRelativeUrl)\(type != "" && type != "AllFields" ? "/\(type)" : "")"
         
         if let query = withQuery {
             url += JunoHelper.shared.parseQuery(query: query)
@@ -219,8 +219,7 @@ public class SharePoint {
             
             var folderList = [SPFolder]()
             var fileList = [SPFile]()
-            if let dict = success {
-                
+            if let dict = success { 
                 if type == "" {
                     //folder operations
                     if let list = dict["Folders"] as? NSArray {
@@ -232,20 +231,49 @@ public class SharePoint {
                         fileList = self.fileOperation(list: list)
                     }
                 }else {
-                    if type == "Folders" {
+                    switch type{
+                    case "Folders":
                         if let list = dict["value"] as? NSArray {
                             folderList = self.folderOperation(list: list)
                         }
-                    }else {
+                        break
+                    case "AllFields":
+                        folderList = self.allFieldsOperation(item: dict)
+                        break
+                    default:
                         if let list = dict["value"] as? NSArray {
                             fileList = self.fileOperation(list: list)
                         }
+                        break
                     }
                 }
-                
                 completionHandler((folderList, fileList), error)
             }
         }
+    }
+    
+    private func prepareSPFolderData(from item: NSObject) -> NSDictionary? {
+        guard let json = item as? [String: Any] else { return [:] }
+        var preparedData = json
+
+        if let listItemAllFields = json["ListItemAllFields"] as? [String: Any] {
+            if let id = listItemAllFields["ID"] as? Int {
+                preparedData["ID"] = id
+            }
+            if let albumDate = listItemAllFields["AlbumDate"] as? String {
+                preparedData["AlbumDate"] = albumDate
+            }
+        }
+        return preparedData as NSDictionary
+    }
+
+    private func allFieldsOperation(item: NSObject) -> [SPFolder] {
+        var folderList = [SPFolder]()
+        if let result = prepareSPFolderData(from: item) {
+            let spFolder = SPFolder(dict: result)
+            folderList.append(spFolder)
+        }
+        return folderList
     }
     
     private func folderOperation(list: NSArray) -> [SPFolder] {
@@ -571,7 +599,8 @@ public class SharePoint {
     }
     
     //upload file to document library
-    public func uploadFileToDocumentLibrary(folderName: String, file: Data, fileName: String = "\(String(Date().timeIntervalSince1970)).png", completionHandler: @escaping(NSDictionary)->()){
+    public func uploadFileToDocumentLibrary(folderName: String, file: Data, fileName: String = "\(String(Date().timeIntervalSince1970)).png",
+                                            subsite: String = "",completionHandler: @escaping(NSDictionary)->()){
         
         self.getFormDigestValue { (formDigestValue) in
             let headers = [
@@ -579,7 +608,7 @@ public class SharePoint {
             ] as [String: AnyObject]
             
             if let siteName = self.siteName {
-                let url: String = "\(siteName)/_api/Web/getfolderbyserverrelativeurl('\(siteName)/\(folderName)')/Files/Add(url='\(fileName)',overwrite=true)"
+                let url: String = "\(siteName)\(subSite != "" ? "/\(subSite)/_api/Web/getfolderbyserverrelativeurl('\(siteName)\(subSite != "" ? "/\(subSite)/\(folderName)')/Files/Add(url='\(fileName)',overwrite=true)"
                 if let link = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                     if let replacedPath = link.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                         Connection.shared.request(method: .post, resource: .SharePoint, controllerName: replacedPath, headers: headers, isBinary: file, completionHandler: { (success, error) in
