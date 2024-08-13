@@ -201,6 +201,32 @@ public class SharePoint {
         }
     }
     
+    //get sharepoint list items count
+    //@params: listName: String
+    //@params: folder: string
+    //@params: subSite: string
+    //completionHandler: (Int)
+    //type: GET
+    //method access: public
+    public func getListItemsCount(listName: String, folder: String = "", subSite: String = "", completionHandler: @escaping(Int)->()){
+        var count = 0
+        if let siteName = self.siteName {
+            let url: String = "\(siteName)\(subSite != "" ? "/\(subSite)" : "")/_api/Web/GetFolderByServerRelativeUrl('\(siteName)\(subSite != "" ? "/\(subSite)" : "")/Lists/\(listName)\(folder != "" ? "/\(folder)" : "")')/ItemCount"
+            
+            Connection.shared.request(method: .get, resource: .SharePoint, controllerName: url) { (success, error) in
+                if let dict = success {
+                    if let value = dict["value"] as? Int {
+                        count = value
+                    }
+                }
+                
+                completionHandler(count)
+            }
+        }
+    }
+    
+    // https://devjunointranet.sharepoint.com/sites/dev/_api/web/GetFolderByServerRelativeUrl(%27/sites/dev/Lists/EventAttendances/test-etkinlik-deneme%27)/ItemCount
+    
     //get sharepoint document items
     //@params: subSite: String
     //@params: serverRelativeUrl: String
